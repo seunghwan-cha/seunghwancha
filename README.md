@@ -23,3 +23,5 @@ model.add(Dense(1, activation='sigmoid'))
 
 model.compile(optimizer='rmsprop', loss='binary_crossentropy', metrics=['acc'])
 history = model.fit(X_train, y_train, epochs=15, callbacks=[es, mc], batch_size=60, validation_split=0.2)
+
+참조 : https://wikidocs.net/44249
