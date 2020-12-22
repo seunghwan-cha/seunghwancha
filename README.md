@@ -1,21 +1,18 @@
-네이버 영화 리뷰 감성 분류
+NLP Sentiment Analysis
+자뎐어처리 한글/영어 감정분석 모델
 
-다운로드링크 : https://github.com/e9t/nsmc/
 
+한글 감정 분석 모델
+<네이버(NSMC) 영화 리뷰 감정 분류>
+
+실행환경 : Colab
 데이터 정제 : 중복제거
-
 토큰화 : 불용어 제거
-
 형태소분석기 : konlpy Okt 사용
-
 정수인코딩
-
 빈 샘플 제거
-
 패딩
-
 LSTM을 활용한 감정분석
-
 model = Sequential()
 model.add(Embedding(vocab_size, 100))
 model.add(LSTM(128))
@@ -25,3 +22,16 @@ model.compile(optimizer='rmsprop', loss='binary_crossentropy', metrics=['acc'])
 history = model.fit(X_train, y_train, epochs=15, callbacks=[es, mc], batch_size=60, validation_split=0.2)
 
 참조 : https://wikidocs.net/44249
+각종 모델 및 오픈소스 참고
+
+영어 감정 분석 모델
+<프렌즈 드라마 대사 감정 분류>
+
+실행환경 : Colab
+CNN.LSTM을 이용한 모델링
+불용어 리스트 활용
+JSON 파일 cleaning 함수를 통한 정제
+word2index를 이용
+
+참조 : https://www.secmem.org/blog/2020/07/19/Sentiment-Analysis
+각종 인터넷 자료 및 오픈소스 
